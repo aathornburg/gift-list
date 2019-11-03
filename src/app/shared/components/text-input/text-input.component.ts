@@ -17,7 +17,7 @@ export class TextInputComponent implements OnInit, ControlValueAccessor {
   public placeholder: string;
 
   @Input()
-  public id: string;
+  public inputId: string;
 
   // Given by Angular so that this component can communicate with the parent form
   private onChange: Function = (text: string) => {};
@@ -29,12 +29,7 @@ export class TextInputComponent implements OnInit, ControlValueAccessor {
   constructor() { }
 
   ngOnInit() {
-    this.determineInputId(); // TODO
     this.wireUpFormControls();
-  }
-
-  private determineInputId(): void {
-
   }
 
   private wireUpFormControls(): void {
