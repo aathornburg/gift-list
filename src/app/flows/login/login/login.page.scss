@@ -1,4 +1,4 @@
-.login-header {
+.__header {
     position: relative;
     height: 220px;
     display: flex;
@@ -22,5 +22,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+.__content {
+    padding: 25px 40px;
+
+    .__intro-text {
+        h2 {
+            color: var(--ion-color-medium);
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    
+        span {
+            color: var(--ion-color-light-medium);
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
     }
 }
