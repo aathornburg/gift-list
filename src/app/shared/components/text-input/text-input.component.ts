@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'text-input',
@@ -11,23 +11,40 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     multi: true
   }]
 })
-export class TextInputComponent implements ControlValueAccessor {
+export class TextInputComponent implements OnInit, ControlValueAccessor {
 
   @Input()
   public placeholder: string;
 
+  @Input()
+  public id: string;
+
   // Given by Angular so that this component can communicate with the parent form
-  private onChange: Function = () => {};
-  private onTouched: Function = () => {};
+  private onChange: Function = (text: string) => {};
+  public onTouched: Function = () => {};
+
+  // Template variables
+  public textControl: FormControl = new FormControl('');
 
   constructor() { }
 
-  public inputChange(event: any): void {
-    console.log(event);
+  ngOnInit() {
+    this.determineInputId(); // TODO
+    this.wireUpFormControls();
   }
 
-  public writeValue(obj: any): void {
-    this.onChange(obj);
+  private determineInputId(): void {
+
+  }
+
+  private wireUpFormControls(): void {
+    this.textControl.valueChanges.subscribe(
+      newValue => this.onChange(newValue)
+    );
+  }
+
+  public writeValue(text: string): void {
+    this.textControl.setValue(text);
   }
 
   public registerOnChange(fn: Function): void {

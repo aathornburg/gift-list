@@ -43,6 +43,7 @@
     </div>
   </div>
   <form class="__form" [formGroup]="loginForm">
-    <text-input></text-input>
+    <text-input formControlName="username" placeholder="username" (changed)="test2(event)"></text-input>
+    <text-input formControlName="password" placeholder="password"></text-input>
   </form>
 </ion-content>
