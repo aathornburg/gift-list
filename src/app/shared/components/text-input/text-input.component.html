@@ -1,2 +1,2 @@
-<label [for]="inputId">{{placeholder}}</label>
+<label [for]="inputId" [@moveUpShrink]="!!textControl.value">{{placeholder}}</label>
 <input type="text" [id]="inputId" [formControl]="textControl">
