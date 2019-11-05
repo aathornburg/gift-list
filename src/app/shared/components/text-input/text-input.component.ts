@@ -23,6 +23,10 @@ export class TextInputComponent implements OnInit, ControlValueAccessor {
   @Input()
   public inputId: string;
 
+  // Default input attributes
+  @Input()
+  public autocapitalize: string;
+
   // Given by Angular so that this component can communicate with the parent form
   private onChange: Function = (text: string) => {};
   public onTouched: Function = () => {};
