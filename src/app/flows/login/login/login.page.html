@@ -42,8 +42,9 @@
       <span>Please sign in to your account</span>
     </div>
     <form class="__form" [formGroup]="loginForm">
-      <text-input formControlName="username" placeholder="username" inputId="username" autocapitalize="off"></text-input>
-      <text-input formControlName="password" placeholder="password" inputId="password"></text-input>
+      <text-input type="text" formControlName="username" placeholder="username" autocapitalize="off"></text-input>
+      <text-input type="password" formControlName="password" placeholder="password"></text-input>
     </form>
+    <!-- <ion-router-link>Forgot your password?</ion-router-link> -->
   </div>
 </ion-content>
