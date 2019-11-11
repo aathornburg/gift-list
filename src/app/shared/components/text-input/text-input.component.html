@@ -1,2 +1,6 @@
-<label [for]="inputId" [@moveUpShrink]="!!textControl.value">{{placeholder}}</label>
-<input type="text" [id]="inputId" [formControl]="textControl" [autocapitalize]="autocapitalize">
+<ion-item lines="none">
+    <ion-label color="light" position="floating">
+      <small>{{placeholder.toUpperCase()}}</small>
+    </ion-label>
+    <ion-input type="text" [formControl]="textControl" [autocapitalize]="autocapitalize"></ion-input>
+  </ion-item>

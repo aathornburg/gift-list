@@ -1,28 +1,9 @@
-:host {
-    $left-padding: 20px;
-    $border-width: 2px;
+ion-item {
+    border-radius: 3px;
+    border: 2px solid var(--ion-color-primary-light);
+    margin-top: 20px;
 
-    position: relative;
-    display: block;
-    height: 65px;
-    width: 100%;
-
-    label {
-        position: absolute;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        margin-left: $left-padding;
-        text-transform: uppercase;
-        color: var(--ion-color-light-medium-tint);
-        font-size: 14px;
-    }
-
-    input {
-        height: 100%;
-        width: 100%;
-        border-radius: 3px;
-        border: $border-width solid var(--ion-color-primary-light);
-        padding-left: calc(#{$left-padding} - #{$border-width});
+    ion-label small {
+        font-size: 85%;
     }
 }
