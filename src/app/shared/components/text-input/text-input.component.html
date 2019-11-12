@@ -1,6 +1,6 @@
-<ion-item lines="none">
-    <ion-label color="light" position="floating">
-      <small>{{placeholder.toUpperCase()}}</small>
-    </ion-label>
-    <ion-input color="medium" [type]="type" [formControl]="textControl" [autocapitalize]="autocapitalize"></ion-input>
-  </ion-item>
+<!-- <ion-item> -->
+  <ion-label mode="md" color="light" [@moveUpShrink]="!!textControl.value">
+    <small>{{placeholder}}</small>
+  </ion-label>
+  <ion-input color="medium" [type]="type" [formControl]="textControl" [autocapitalize]="autocapitalize"></ion-input>
+<!-- </ion-item> -->
