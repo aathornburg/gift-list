@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+    <linearGradient id="login-flow-block" gradientUnits="userSpaceOnUse" x1="25%" y1="80%" x2="75%" y2="20%">
+        <stop offset="0%" stop-color="#2EC4B6" />
+        <stop offset="100%" stop-color="#7CF1E6" />
+    </linearGradient>
+    <path fill="url(#login-flow-block)"
+        d="M 0, 0
+        L 0, 900
+        C 350, 1200, 700, 700, 1000, 1000
+        L 1000, 0
+        Z"
+    />
+    <path fill="url(#login-flow-block)" fill-opacity=".25"
+        d="M 0, 1000
+        Q 500, 800, 700, 900
+        L 0, 900"
+    />
+    <path fill="url(#login-flow-block)" fill-opacity=".25"
+        d="M 250, 1000
+        C 600, 1000, 650, 1000, 800, 900
+        L 250, 900"
+    />
+    <path fill="url(#login-flow-block)" fill-opacity=".25"
+        d="M 400, 900
+        C 800, 1050, 950, 975, 1100, 900
+        L 250, 900"
+    />
+</svg>

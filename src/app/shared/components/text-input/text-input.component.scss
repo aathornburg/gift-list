@@ -1,5 +1,5 @@
 :host {
-    $left-padding: 20px;
+    $input-side-padding: 20px;
     $border-width: 2px;
 
     display: block;
@@ -7,13 +7,15 @@
     height: 65px;
     width: 100%;
     margin-top: 20px;
+    border-radius: 3px;
+    border: $border-width solid var(--ion-color-primary-light);
 
     ion-label {
         position: absolute;
         height: 100%;
         display: flex;
         align-items: center;
-        margin-left: 20px;
+        margin-left: calc(#{$input-side-padding} - #{$border-width} - 1px);
         text-transform: uppercase;
         color: var(--ion-color-light);
 
@@ -23,37 +25,11 @@
     }
 
     ion-input {
+        position: absolute;
+        bottom: 0;
         height: 100%;
         width: 100%;
-        border-radius: 3px;
-        border: $border-width solid var(--ion-color-primary-light);
-        --padding-start: calc(#{$left-padding} - #{$border-width} - 1px);
+        --padding-start: calc(#{$input-side-padding} - #{$border-width} - 1px);
+        --padding-end: calc(#{$input-side-padding} - #{$border-width} - 1px);
     }
 }
-
-// $left-padding: 20px;
-//     $border-width: 2px;
-
-//     position: relative;
-//     display: block;
-//     height: 60px;
-//     width: 100%;
-
-//     label {
-//         position: absolute;
-//         height: 100%;
-//         display: flex;
-//         align-items: center;
-//         margin-left: $left-padding;
-//         text-transform: uppercase;
-//         color: var(--ion-color-light-medium-tint);
-//         font-size: 14px;
-//     }
-
-//     input {
-//         height: 100%;
-//         width: 100%;
-//         border-radius: 3px;
-//         border: $border-width solid var(--ion-color-primary-light);
-//         padding-left: calc(#{$left-padding} - #{$border-width});
-//     }
