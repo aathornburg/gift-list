@@ -39,9 +39,10 @@
     .__intro-text {
         h2 {
             color: var(--ion-color-medium);
-            font-size: 36px;
+            font-size: 26px;
             font-weight: bold;
-            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 5px;
         }
     
         span {
@@ -52,10 +53,10 @@
     }
 
     .__form {
-        margin-top: 35px;
+        margin-top: 25px;
 
         text-input {
-            margin-top: 30px;
+            margin-top: 15px;
         }
     }
 
@@ -72,6 +73,7 @@
         justify-self: center;
         align-self: end;
         margin-bottom: 15px;
+        margin-top: 30px;
 
         ion-button {
             --background: linear-gradient(
@@ -81,6 +83,7 @@
             );
 
             color: white;
+            width: 150px;
         }
 
         .__create-account-link {

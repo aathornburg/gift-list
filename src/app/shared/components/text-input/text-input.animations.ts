@@ -11,7 +11,7 @@ export const moveUpShrink = trigger('moveUpShrink', [
 ]);
 
 export const shrinkHeight = trigger('shrinkHeight', [
-    state('true', style({ height: '50px' })),
+    state('true', style({ height: '45px' })),
     transition('* <=> *', [
         animate('150ms ease-in-out')
     ])
