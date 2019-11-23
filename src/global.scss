@@ -28,4 +28,7 @@
 /* Custom CSS */
 @import "./svg-styles.scss";
 
+/* Flow-specific styles */
+@import "./app/flows/login/login-flow.scss";
+
 /* -------------------------------------------------------------------------------- */

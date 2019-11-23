@@ -1,9 +1,54 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content class="__login-flow-page">
+  <div class="__content-wrapper">
+    <div class="__header">
+        <svg class="test" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 800" preserveAspectRatio="none">
+          <linearGradient id="gradient-def" gradientUnits="userSpaceOnUse" x1="40%" y1="80%" x2="75%" y2="20%">
+            <stop offset="0%" />
+            <stop offset="100%" />
+          </linearGradient>
+          <path fill="url(#gradient-def)"
+              d="M 0, 0
+              L 0, 700
+              C 350, 1000, 700, 500, 1000, 800
+              L 1000, 0
+              Z"
+          />
+          <path fill="url(#gradient-def)" fill-opacity=".25"
+              d="M 0, 800
+              Q 500, 600, 700, 700
+              L 0, 700"
+          />
+          <path fill="url(#gradient-def)" fill-opacity=".25"
+              d="M 250, 800
+              C 600, 800, 650, 800, 800, 700
+              L 250, 700"
+          />
+          <path fill="url(#gradient-def)" fill-opacity=".25"
+              d="M 400, 700
+              C 800, 850, 950, 775, 1100, 700
+              L 250, 700"
+          />
+      </svg>
+      <h1>Sign up</h1>
+    </div>
+    <div class="__content">
+      <div class="__intro-text">
+        <h2>Welcome</h2>
+        <span>Please sign in to your account</span>
+      </div>
+      <div class="__form-group">
+        <form class="__form" [formGroup]="signUpForm">
+          <text-input type="text" formControlName="username" placeholder="username" autocapitalize="off"></text-input>
+          <text-input type="password" formControlName="password" placeholder="password"></text-input>
+        </form>
+        <span class="__forgot-password-link" routerLink="/test">Forgot your password?</span>
+      </div>
+      <div class="__bottom-group">
+        <ion-button>Sign in</ion-button>
+        <span class="__create-account-link" routerLink="/test">
+          Don't have an account? <span class="__create-account-link-highlight">Create</span>
+        </span>
+      </div>
+    </div>
+  </div>
 </ion-content>
