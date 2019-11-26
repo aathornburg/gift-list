@@ -26,6 +26,22 @@
             align-items: center;
         }
     }
+
+    .__intro-text {
+        h2 {
+            color: var(--ion-color-medium);
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+    
+        span {
+            color: var(--ion-color-light-medium);
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+    }
     
     .__content {
         display: grid;
