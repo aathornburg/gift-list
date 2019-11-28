@@ -1,0 +1,38 @@
+.__form {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-areas:
+        "fn ln"
+        "g   b"
+        "ea ea"
+        "un un"
+        "pw pw";
+
+    .__first-name-input {
+        grid-area: fn;
+    }
+
+    .__last-name-input {
+        grid-area: ln;
+    }
+
+    .__gender-input {
+        grid-area: g;
+    }
+
+    .__birthday-input {
+        grid-area: b;
+    }
+
+    .__email-address-input {
+        grid-area: ea;
+    }
+
+    .__username-input {
+        grid-area: un;
+    }
+
+    .__password-input {
+        grid-area: pw;
+    }
+}

@@ -32,14 +32,17 @@
         <h2>Welcome</h2>
         <span>Please sign in to your account</span>
       </div>
-      <div class="__form-group">
-        <form class="__form" [formGroup]="signUpForm">
-          <text-input type="text" formControlName="username" placeholder="username" autocapitalize="off"></text-input>
-          <text-input type="password" formControlName="password" placeholder="password"></text-input>
-        </form>
-      </div>
+      <form class="__form" [formGroup]="signUpForm">
+        <text-input class="__first-name-input" type="text" formControlName="firstName" placeholder="first name*"></text-input>
+        <text-input class="__last-name-input" type="text" formControlName="lastName" placeholder="last name*"></text-input>
+        <text-input class="__gender-input" type="text" formControlName="gender" placeholder="gender"></text-input>
+        <text-input class="__birthday-input" type="text" formControlName="birthday" placeholder="birthday*"></text-input>
+        <text-input class="__email-address-input" type="text" formControlName="emailAddress" placeholder="email address*"></text-input>
+        <text-input class="__username-input" type="text" formControlName="username" placeholder="username*"></text-input>
+        <text-input class="__password-input" type="password" formControlName="password" placeholder="password*"></text-input>
+      </form>
       <div class="__bottom-group">
-        <ion-button>Sign in</ion-button>
+        <ion-button>Create</ion-button>
       </div>
     </div>
   </div>

@@ -20,6 +20,11 @@ export class SignUpPage implements OnInit {
 
   private initializeSignUpForm(): void {
     this.signUpForm = new FormGroup({
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      gender: new FormControl(''),
+      birthday: new FormControl(''),
+      emailAddress: new FormControl(''),
       username: new FormControl(''),
       password: new FormControl('')
     });
