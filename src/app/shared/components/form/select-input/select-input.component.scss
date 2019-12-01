@@ -1,0 +1,37 @@
+:host {
+    $input-side-padding: 20px;
+    $border-width: 2px;
+
+    display: block;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    border-radius: 3px;
+    border: $border-width solid var(--ion-color-primary-light);
+
+    ion-label {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: calc(#{$input-side-padding} - #{$border-width} - 1px);
+        text-transform: uppercase;
+        color: var(--ion-color-light);
+
+        small {
+            font-size: 85%;
+        }
+    }
+
+    ion-select {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        color: var(--ion-color-medium);
+        --padding-start: calc(#{$input-side-padding} - #{$border-width} - 1px);
+        --padding-end: calc(#{$input-side-padding} - #{$border-width} - 1px);
+    }
+}

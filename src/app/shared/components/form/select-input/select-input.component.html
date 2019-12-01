@@ -2,4 +2,8 @@
   <small>{{placeholder}}</small>
 </ion-label>
 <ion-select color="medium" [@shrinkHeight]="!!selectControl.value"
-  [formControl]="selectControl"></ion-select>
+  [formControl]="selectControl">
+  <ion-select-option color="medium">Male</ion-select-option>
+  <ion-select-option color="medium">Female</ion-select-option>
+  <ion-select-option color="medium">Other</ion-select-option>
+</ion-select>
