@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TextInputComponent } from './components/text-input/text-input.component';
+import { TextInputComponent } from './components/form/text-input/text-input.component';
+import { SelectInputComponent } from './components/form/select-input/select-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SvgDefsComponent } from './components/svg-defs/svg-defs.component';
@@ -10,6 +11,7 @@ import { SvgDefsComponent } from './components/svg-defs/svg-defs.component';
 @NgModule({
   declarations: [
     TextInputComponent,
+    SelectInputComponent,
     SvgDefsComponent
   ],
   imports: [
@@ -19,6 +21,7 @@ import { SvgDefsComponent } from './components/svg-defs/svg-defs.component';
   ],
   exports: [
     TextInputComponent,
+    SelectInputComponent,
     SvgDefsComponent
   ]
 })
