@@ -18,6 +18,19 @@ export class SignUpPage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewDidEnter() {
+    const ionSelect: HTMLIonSelectElement = document.querySelector('ion-select');
+    console.log(ionSelect);
+    console.log(ionSelect.shadowRoot.children);
+    console.log(ionSelect.shadowRoot.querySelector('.select-icon'));
+
+    const ionSelects: NodeListOf<HTMLIonSelectElement> = document.querySelectorAll('ion-select');
+    // console.log(ionSelects);
+    ionSelects.forEach((ionSelectElement: Element) => {
+      console.log(ionSelectElement.shadowRoot.querySelectorAll('.select-icon'));
+    });
+  }
+
   private initializeSignUpForm(): void {
     this.signUpForm = new FormGroup({
       firstName: new FormControl(''),

@@ -1,6 +1,7 @@
 :host {
     $input-side-padding: 20px;
     $border-width: 2px;
+    $side-padding-width: 4px;
 
     display: block;
     position: relative;
@@ -14,9 +15,11 @@
         height: 100%;
         display: flex;
         align-items: center;
-        margin-left: calc(#{$input-side-padding} - #{$border-width} - 1px);
+        margin-left: calc(#{$input-side-padding} - #{$border-width} - #{$side-padding-width} - 1px);
         text-transform: uppercase;
         color: var(--ion-color-light);
+        padding: 0px $side-padding-width;
+        background: white;
 
         small {
             font-size: 85%;
