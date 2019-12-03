@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
-import { moveUpShrink, shrinkHeight } from '../form.animations';
+import { moveUpShrink } from '../form.animations';
 
 @Component({
   selector: 'text-input',
@@ -12,8 +12,7 @@ import { moveUpShrink, shrinkHeight } from '../form.animations';
     multi: true
   }],
   animations: [
-    moveUpShrink,
-    shrinkHeight
+    moveUpShrink
   ]
 })
 export class TextInputComponent implements OnInit, ControlValueAccessor {

@@ -1,25 +1,29 @@
 :host {
-    $input-side-padding: 20px;
-    $border-width: 2px;
-    $side-padding-width: 4px;
+    $input-side-padding: 14px;
+    $input-border-width: 2px;
+    $input-height: 55px;
+    $input-font-size: 15px;
+    $label-side-padding: 4px;
 
     display: block;
     position: relative;
-    height: 60px;
+    height: $input-height;
     width: 100%;
     border-radius: 3px;
-    border: $border-width solid var(--ion-color-primary-light);
+    border: $input-border-width solid var(--ion-color-primary-light);
 
     ion-label {
         position: absolute;
-        height: 100%;
         display: flex;
         align-items: center;
-        margin-left: calc(#{$input-side-padding} - #{$border-width} - #{$side-padding-width} - 1px);
+        margin-left: calc(#{$input-side-padding} - #{$input-border-width} - #{$label-side-padding} - 1px);
         text-transform: uppercase;
         color: var(--ion-color-light);
-        padding: 0px $side-padding-width;
+        padding: 0px $label-side-padding;
         background: white;
+        font-size: $input-font-size;
+        height: $input-font-size;
+        top: calc(-#{$input-border-width} + (#{$input-height} / 2) - (#{$input-font-size} / 2));
 
         small {
             font-size: 85%;
@@ -31,7 +35,8 @@
         bottom: 0;
         height: 100%;
         width: 100%;
-        --padding-start: calc(#{$input-side-padding} - #{$border-width} - 1px);
-        --padding-end: calc(#{$input-side-padding} - #{$border-width} - 1px);
+        font-size: $input-font-size;
+        --padding-start: calc(#{$input-side-padding} - #{$input-border-width} - 1px);
+        --padding-end: calc(#{$input-side-padding} - #{$input-border-width} - 1px);
     }
 }

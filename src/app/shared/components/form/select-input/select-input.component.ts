@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ElementRef, AfterViewInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormControl, ControlValueAccessor } from '@angular/forms';
-import { moveUpShrink, shrinkHeight } from '../form.animations';
+import { moveUpShrink } from '../form.animations';
 
 @Component({
   selector: 'select-input',
@@ -12,8 +12,7 @@ import { moveUpShrink, shrinkHeight } from '../form.animations';
     multi: true
   }],
   animations: [
-    moveUpShrink,
-    shrinkHeight
+    moveUpShrink
   ]
 })
 export class SelectInputComponent implements OnInit, ControlValueAccessor {
@@ -28,31 +27,11 @@ export class SelectInputComponent implements OnInit, ControlValueAccessor {
   // Template variables
   public selectControl: FormControl = new FormControl(false);
 
-  constructor(private element: ElementRef) {
+  constructor() {
   }
 
   ngOnInit() {
-    // this.hideIonicSelectArrow();
     this.wireUpFormControls();
-  }
-
-  ionViewDidEnter() {
-    this.hideIonicSelectArrow();
-  }
-
-  private hideIonicSelectArrow(): void {
-    const ionSelect: HTMLIonSelectElement = document.querySelector('ion-select');
-    console.log(ionSelect);
-    console.log(ionSelect.shadowRoot.children);
-    const arrowIcon = ionSelect.shadowRoot.querySelector('.select-icon-inner').children;
-    console.log(arrowIcon);
-    ionSelect.shadowRoot.querySelector('.select-icon-inner').setAttribute('style', 'display: none !important');
-
-    const ionSelects: NodeListOf<HTMLIonSelectElement> = document.querySelectorAll('ion-select');
-    // console.log(ionSelects);
-    ionSelects.forEach((ionSelectElement: Element) => {
-      console.log(ionSelectElement.shadowRoot.querySelectorAll('.select-icon'));
-    });
   }
 
   private wireUpFormControls(): void {
