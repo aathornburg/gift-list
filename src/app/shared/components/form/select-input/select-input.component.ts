@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ElementRef, AfterViewInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormControl, ControlValueAccessor } from '@angular/forms';
+import { Component } from '@angular/core';
+import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 import { moveUpShrink } from '../form.animations';
 import { BaseInputDirective } from '../base-input/base-input.directive';
 
