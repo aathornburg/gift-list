@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ElementRef, AfterViewInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormControl, ControlValueAccessor } from '@angular/forms';
 import { moveUpShrink } from '../form.animations';
+import { BaseInputDirective } from '../base-input/base-input.directive';
 
 @Component({
   selector: 'select-input',
@@ -17,52 +18,13 @@ import { moveUpShrink } from '../form.animations';
   host: { 'class': '__form-input-host' }
 })
 
-
-
-
-
-// TODO: Generalize a lot of the input code and styles because I need to make a date input. A TON of this code is very similar to the other inputs
-
-
-
-
-
-
-export class SelectInputComponent implements OnInit, ControlValueAccessor {
-
-  @Input()
-  public placeholder: string;
-
-  // Given by Angular so that this component can communicate with the parent form
-  private onChange: Function = (text: string) => {};
-  public onTouched: Function = () => {};
+export class SelectInputComponent extends BaseInputDirective {
 
   // Template variables
-  public selectControl: FormControl = new FormControl(false);
+  public inputControl: FormControl = new FormControl(false);
 
   constructor() {
-  }
-
-  ngOnInit() {
-    this.wireUpFormControls();
-  }
-
-  private wireUpFormControls(): void {
-    this.selectControl.valueChanges.subscribe(
-      newValue => this.onChange(newValue)
-    );
-  }
-
-  public writeValue(value: boolean): void {
-    this.selectControl.setValue(value);
-  }
-
-  public registerOnChange(fn: Function): void {
-    this.onChange = fn;
-  }
-
-  public registerOnTouched(fn: Function): void {
-    this.onTouched = fn;
+    super();
   }
 
 }

@@ -5,14 +5,16 @@ import { SelectInputComponent } from './components/form/select-input/select-inpu
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SvgDefsComponent } from './components/svg-defs/svg-defs.component';
+import { BaseInputDirective } from './components/form/base-input/base-input.directive';
 
 
 
 @NgModule({
   declarations: [
+    BaseInputDirective,
     TextInputComponent,
     SelectInputComponent,
-    SvgDefsComponent
+    SvgDefsComponent,
   ],
   imports: [
     CommonModule,

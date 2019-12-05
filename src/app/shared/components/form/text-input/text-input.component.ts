@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
 import { moveUpShrink } from '../form.animations';
+import { BaseInputDirective } from '../base-input/base-input.directive';
 
 @Component({
   selector: 'text-input',
@@ -16,10 +17,7 @@ import { moveUpShrink } from '../form.animations';
   ],
   host: { 'class': '__form-input-host' }
 })
-export class TextInputComponent implements OnInit, ControlValueAccessor {
-
-  @Input()
-  public placeholder: string;
+export class TextInputComponent extends BaseInputDirective {
 
   // Default input attributes
   @Input()
@@ -28,34 +26,11 @@ export class TextInputComponent implements OnInit, ControlValueAccessor {
   @Input()
   public type: string;
 
-  // Given by Angular so that this component can communicate with the parent form
-  private onChange: Function = (text: string) => {};
-  public onTouched: Function = () => {};
-
   // Template variables
-  public textControl: FormControl = new FormControl('');
+  public inputControl: FormControl = new FormControl('');
 
-  constructor() { }
-
-  ngOnInit() {
-    this.wireUpFormControls();
+  constructor() {
+    super();
   }
 
-  private wireUpFormControls(): void {
-    this.textControl.valueChanges.subscribe(
-      newValue => this.onChange(newValue)
-    );
-  }
-
-  public writeValue(text: string): void {
-    this.textControl.setValue(text);
-  }
-
-  public registerOnChange(fn: Function): void {
-    this.onChange = fn;
-  }
-
-  public registerOnTouched(fn: Function): void {
-    this.onTouched = fn;
-  }
 }
