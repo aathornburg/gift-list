@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SvgDefsComponent } from './components/svg-defs/svg-defs.component';
 import { BaseInputDirective } from './components/form/base-input/base-input.directive';
+import { DateInputComponent } from './components/form/date-input/date-input.component';
 
 
 
@@ -14,6 +15,7 @@ import { BaseInputDirective } from './components/form/base-input/base-input.dire
     BaseInputDirective,
     TextInputComponent,
     SelectInputComponent,
+    DateInputComponent,
     SvgDefsComponent,
   ],
   imports: [
@@ -24,6 +26,7 @@ import { BaseInputDirective } from './components/form/base-input/base-input.dire
   exports: [
     TextInputComponent,
     SelectInputComponent,
+    DateInputComponent,
     SvgDefsComponent
   ]
 })
