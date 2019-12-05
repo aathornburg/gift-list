@@ -1,29 +1,29 @@
 .__form-input-host {
-    $input-side-padding: 14px;
-    $input-border-width: 2px;
-    $input-height: 55px;
-    $input-font-size: 15px;
-    $label-side-padding: 4px;
+    --input-side-padding: 14px;
+    --input-border-width: 2px;
+    --input-height: 55px;
+    --input-font-size: 15px;
+    --label-side-padding: 4px;
 
     display: block;
     position: relative;
-    height: $input-height;
+    height: var(--input-height);
     width: 100%;
     border-radius: 3px;
-    border: $input-border-width solid var(--ion-color-primary-light);
+    border: var(--input-border-width) solid var(--ion-color-primary-light);
 
     ion-label {
         position: absolute;
         display: flex;
         align-items: center;
-        margin-left: calc(#{$input-side-padding} - #{$input-border-width} - #{$label-side-padding} - 1px);
+        margin-left: calc(var(--input-side-padding) - var(--input-border-width) - var(--label-side-padding) - 1px);
         text-transform: uppercase;
         color: var(--ion-color-light);
-        padding: 0px $label-side-padding;
+        padding: 0px var(--label-side-padding);
         background: white;
-        font-size: $input-font-size;
-        height: $input-font-size;
-        top: calc(-#{$input-border-width} + (#{$input-height} / 2) - (#{$input-font-size} / 2));
+        font-size: var(--input-font-size);
+        height: var(--input-font-size);
+        top: calc((var(--input-border-width) * -1) + (var(--input-height) / 2) - (var(--input-font-size) / 2));
 
         small {
             font-size: 85%;
@@ -35,8 +35,8 @@
         bottom: 0;
         height: 100%;
         width: 100%;
-        font-size: $input-font-size;
-        --padding-start: calc(#{$input-side-padding} - #{$input-border-width} - 1px);
-        --padding-end: calc(#{$input-side-padding} - #{$input-border-width} - 1px);
+        font-size: var(--input-font-size);
+        --padding-start: calc(var(--input-side-padding) - var(--input-border-width) - 1px);
+        --padding-end: calc(var(--input-side-padding) - var(--input-border-width) - 1px);
     }
 }
