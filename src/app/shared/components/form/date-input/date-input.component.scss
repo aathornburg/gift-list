@@ -3,3 +3,12 @@ ion-datetime {
     align-items: center;
     color: var(--ion-color-medium);
 }
+
+ion-icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    font-size: 24px;
+}
