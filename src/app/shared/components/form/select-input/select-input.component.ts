@@ -13,8 +13,21 @@ import { moveUpShrink } from '../form.animations';
   }],
   animations: [
     moveUpShrink
-  ]
+  ],
+  host: { 'class': '__form-input-host' }
 })
+
+
+
+
+
+// TODO: Generalize a lot of the input code and styles because I need to make a date input. A TON of this code is very similar to the other inputs
+
+
+
+
+
+
 export class SelectInputComponent implements OnInit, ControlValueAccessor {
 
   @Input()

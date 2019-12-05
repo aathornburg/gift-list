@@ -13,7 +13,8 @@ import { moveUpShrink } from '../form.animations';
   }],
   animations: [
     moveUpShrink
-  ]
+  ],
+  host: { 'class': '__form-input-host' }
 })
 export class TextInputComponent implements OnInit, ControlValueAccessor {
 

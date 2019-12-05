@@ -1,48 +1,5 @@
-:host {
-    $input-side-padding: 14px;
-    $input-border-width: 2px;
-    $input-height: 55px;
-    $input-font-size: 15px;
-    $label-side-padding: 4px;
-
-    display: block;
-    position: relative;
-    height: $input-height;
-    width: 100%;
-    border-radius: 3px;
-    border: $input-border-width solid var(--ion-color-primary-light);
-
-    ion-label {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        margin-left: calc(#{$input-side-padding} - #{$input-border-width} - #{$label-side-padding} - 1px);
-        text-transform: uppercase;
-        color: var(--ion-color-light);
-        padding: 0px $label-side-padding;
-        background: white;
-        font-size: $input-font-size;
-        height: $input-font-size;
-        top: calc(-#{$input-border-width} + (#{$input-height} / 2) - (#{$input-font-size} / 2));
-
-        small {
-            font-size: 85%;
-        }
-    }
-
-    // TODO: Fix the white box when the label animates upwards (don't animate height? just position: absolute the label all the way down?)
-    // TODO: Make input box shorter - it doesn't need to be so tall when the label becomes part of the box
-
-    ion-select {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        color: var(--ion-color-medium);
-        font-size: $input-font-size;
-        --padding-start: calc(#{$input-side-padding} - #{$input-border-width} - 1px);
-        --padding-end: calc(#{$input-side-padding} - #{$input-border-width} - 1px);
-    }
+ion-select {
+    display: flex;
+    align-items: center;
+    color: var(--ion-color-medium);
 }
