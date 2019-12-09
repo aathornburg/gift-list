@@ -33,11 +33,11 @@
         <span>Please sign in to your account</span>
       </div>
       <form class="__form" [formGroup]="signUpForm">
-        <text-input class="__first-name-input" type="text" formControlName="firstName" placeholder="first name*"></text-input>
-        <text-input class="__last-name-input" type="text" formControlName="lastName" placeholder="last name*"></text-input>
+        <text-input class="__first-name-input" type="text" formControlName="firstName" placeholder="first name*" autocapitalize="true"></text-input>
+        <text-input class="__last-name-input" type="text" formControlName="lastName" placeholder="last name*" autocapitalize="true"></text-input>
         <select-input class="__gender-input" type="text" formControlName="gender" placeholder="gender"></select-input>
         <date-input class="__birthday-input" type="text" formControlName="birthday" placeholder="birthday*"></date-input>
-        <text-input class="__email-address-input" type="text" formControlName="emailAddress" placeholder="email address*"></text-input>
+        <text-input class="__email-address-input" type="email" formControlName="emailAddress" placeholder="email address*"></text-input>
         <text-input class="__username-input" type="text" formControlName="username" placeholder="username*"></text-input>
         <text-input class="__password-input" type="password" formControlName="password" placeholder="password*"></text-input>
       </form>
