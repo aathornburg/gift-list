@@ -48,12 +48,8 @@
         grid-template-rows: min-content auto;
         padding: 25px 40px;
     
-        .__form {
-            margin-top: 25px;
-    
-            .__form-input-host {
-                margin-top: 15px;
-            }
+        .__form-input-host {
+            margin-top: 15px;
         }
     
         .__bottom-group {

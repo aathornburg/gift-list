@@ -30,7 +30,8 @@ export class SignUpPage implements OnInit {
       birthday: new FormControl('', Validators.required),
       emailAddress: new FormControl('', Validators.required),
       username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', Validators.required),
+      termsAndConditions: new FormControl(false, Validators.required)
     });
   }
 
