@@ -6,7 +6,8 @@
         "g   b"
         "ea ea"
         "un un"
-        "pw pw";
+        "pw pw"
+        "bg bg";
 
     .__first-name-input {
         grid-area: fn;
@@ -34,5 +35,9 @@
 
     .__password-input {
         grid-area: pw;
+    }
+
+    .__bottom-group {
+        grid-area: bg;
     }
 }

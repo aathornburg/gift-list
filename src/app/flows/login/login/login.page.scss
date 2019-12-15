@@ -1,3 +1,30 @@
+.__form {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-rows: min-content min-content min-content auto;
+    grid-template-areas:
+        "un"
+        "pw"
+        "fpw"
+        "bg";
+
+    .__username-input {
+        grid-area: un;
+    }
+
+    .__password-input {
+        grid-area: pw;
+    }
+
+    .__forgot-password-link {
+        grid-area: fpw;
+    }
+
+    .__bottom-group {
+        grid-area: bg;
+    }
+}
+
 .__forgot-password-link {
     display: block;
     text-align: right;

@@ -32,19 +32,17 @@
         <h2>Welcome</h2>
         <span>Please sign in to your account</span>
       </div>
-      <div class="__form-group">
-        <form class="__form" [formGroup]="loginForm">
-          <text-input type="text" formControlName="username" placeholder="username" autocapitalize="off"></text-input>
-          <text-input type="password" formControlName="password" placeholder="password"></text-input>
-        </form>
+      <form class="__form" [formGroup]="loginForm">
+        <text-input type="text" formControlName="username" placeholder="username" autocapitalize="off"></text-input>
+        <text-input type="password" formControlName="password" placeholder="password"></text-input>
         <span class="__forgot-password-link" routerLink="/test">Forgot your password?</span>
-      </div>
-      <div class="__bottom-group">
-        <ion-button>Sign in</ion-button>
-        <span class="__create-account-link" routerLink="/sign-up">
-          Don't have an account? <span class="__create-account-link-highlight">Create</span>
-        </span>
-      </div>
+        <div class="__bottom-group">
+          <ion-button>Sign in</ion-button>
+          <span class="__create-account-link" routerLink="/sign-up">
+            Don't have an account? <span class="__create-account-link-highlight">Create</span>
+          </span>
+        </div>
+      </form>
     </div>
   </div>
 </ion-content>
