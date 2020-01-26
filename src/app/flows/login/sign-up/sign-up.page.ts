@@ -22,6 +22,11 @@ export class SignUpPage implements OnInit {
     console.log(this.signUpForm.valid);
   }
 
+  public checkTermsAndConditionsInput(): void {
+    const termsAndConditionsValue: boolean = this.signUpForm.get('termsAndConditions').value
+    this.signUpForm.get('termsAndConditions').setValue(!termsAndConditionsValue);
+  }
+
   private initializeSignUpForm(): void {
     this.signUpForm = new FormGroup({
       firstName: new FormControl('', Validators.required),

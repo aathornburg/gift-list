@@ -43,11 +43,14 @@
 
         margin-top: 10px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         height: 25px;
 
-        --ripple-color: transparent;
+        --ripple-color: white;
+        --highlight-color-focused: white;
+        --color-focused: white;
+        --background-focused: white;
 
         ion-checkbox {
             --border-color: var(--ion-color-primary);
