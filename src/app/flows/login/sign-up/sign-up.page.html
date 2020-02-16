@@ -26,6 +26,7 @@
         />
       </svg>
       <h1>Sign up</h1>
+      <ion-icon name="arrow-round-back" color="#FFFFFF" routerLink="/login" routerDirection="back" *ngIf="platform.is('ios')"></ion-icon>
     </div>
     <div class="__content">
       <form class="__form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
@@ -36,10 +37,6 @@
         <text-input class="__email-address-input" type="email" formControlName="emailAddress" placeholder="email address*"></text-input>
         <text-input class="__username-input" type="text" formControlName="username" placeholder="username*"></text-input>
         <text-input class="__password-input" type="password" formControlName="password" placeholder="password*"></text-input>
-        <!-- <ion-item class="__terms-and-conditions" lines="none">
-          <ion-checkbox color="primary" formControlName="termsAndConditions"></ion-checkbox>
-          <ion-label color="medium">I agree to the Terms and Conditions</ion-label>
-        </ion-item> -->
         <div class="__terms-and-conditions">
           <ion-checkbox color="primary" formControlName="termsAndConditions"></ion-checkbox>
           <ion-label color="medium" (click)="checkTermsAndConditionsInput()">I agree to the Terms and Conditions</ion-label>

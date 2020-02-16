@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'sign-up',
@@ -11,7 +13,7 @@ export class SignUpPage implements OnInit {
   // Template variables
   public signUpForm: FormGroup;
 
-  constructor() {
+  constructor(public platform: Platform) {
     this.initializeSignUpForm();
   }
 
@@ -25,6 +27,10 @@ export class SignUpPage implements OnInit {
   public checkTermsAndConditionsInput(): void {
     const termsAndConditionsValue: boolean = this.signUpForm.get('termsAndConditions').value
     this.signUpForm.get('termsAndConditions').setValue(!termsAndConditionsValue);
+  }
+
+  public goBack(): void {
+    this.location.back();
   }
 
   private initializeSignUpForm(): void {
