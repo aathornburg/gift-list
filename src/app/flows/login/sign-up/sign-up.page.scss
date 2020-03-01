@@ -1,11 +1,11 @@
 .__header {
     color: white;
 
-    ion-icon {
+    ion-back-button {
+        display: block;
         position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 24px;
+        top: 0;
+        left: 0;
     }
 }
 
