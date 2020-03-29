@@ -39,4 +39,8 @@
         --padding-start: calc(var(--input-side-padding) - var(--input-border-width) - 1px);
         --padding-end: calc(var(--input-side-padding) - var(--input-border-width) - 1px);
     }
+
+    &.ng-dirty.ng-invalid {
+        border-color: var(--ion-color-danger-light);
+    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, FormControl, NgControl } from '@angular/forms';
 import { moveUpShrink } from '../form.animations';
 import { BaseInputDirective } from '../base-input/base-input.directive';
 
@@ -7,11 +7,6 @@ import { BaseInputDirective } from '../base-input/base-input.directive';
   selector: 'select-input',
   templateUrl: './select-input.component.html',
   styleUrls: ['./select-input.component.scss'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: SelectInputComponent,
-    multi: true
-  }],
   animations: [
     moveUpShrink
   ],
@@ -23,8 +18,8 @@ export class SelectInputComponent extends BaseInputDirective {
   // Template variables
   public inputControl: FormControl = new FormControl(false);
 
-  constructor() {
-    super();
+  constructor(control: NgControl) {
+    super(control);
   }
 
 }

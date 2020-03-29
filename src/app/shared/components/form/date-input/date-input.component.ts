@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, FormControl, NgControl } from '@angular/forms';
 import { moveUpShrink } from '../form.animations';
 import { BaseInputDirective } from '../base-input/base-input.directive';
 
@@ -7,11 +7,6 @@ import { BaseInputDirective } from '../base-input/base-input.directive';
   selector: 'date-input',
   templateUrl: './date-input.component.html',
   styleUrls: ['./date-input.component.scss'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: DateInputComponent,
-    multi: true
-  }],
   animations: [
     moveUpShrink
   ],
@@ -22,10 +17,8 @@ export class DateInputComponent extends BaseInputDirective {
   // Template variables
   public inputControl: FormControl = new FormControl('');
 
-  constructor() {
-    super();
+  constructor(control: NgControl) {
+    super(control);
   }
-
-  ngOnInit() {}
 
 }

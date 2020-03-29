@@ -1,23 +1,24 @@
-import { Component, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
-import { moveUpShrink } from '../form.animations';
+import { Component, Input, HostBinding } from '@angular/core';
+import { FormControl, NgControl } from '@angular/forms';
+import { moveUpShrink, borderColorChange } from '../form.animations';
 import { BaseInputDirective } from '../base-input/base-input.directive';
 
 @Component({
   selector: 'text-input',
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.scss'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: TextInputComponent,
-    multi: true
-  }],
   animations: [
-    moveUpShrink
+    moveUpShrink,
+    borderColorChange
   ],
   host: { 'class': '__form-input-host' }
 })
 export class TextInputComponent extends BaseInputDirective {
+
+  // Animations for the host component
+  @HostBinding('@borderColorChange') get borderColorChange() {
+    return { value: this.getInputAnimationState() };
+  }
 
   // Default input attributes
   @Input()
@@ -29,8 +30,13 @@ export class TextInputComponent extends BaseInputDirective {
   // Template variables
   public inputControl: FormControl = new FormControl('');
 
-  constructor() {
-    super();
+  constructor(control: NgControl) {
+    super(control);
+  }
+
+  public test(): void {
+    console.log(this.getInputAnimationState());
+    console.log(this.control);
   }
 
 }

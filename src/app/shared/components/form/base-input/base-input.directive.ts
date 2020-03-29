@@ -1,10 +1,11 @@
-import { Directive, OnInit, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Directive, OnInit, Input, HostBinding } from '@angular/core';
+import { FormControl, ControlValueAccessor, NgControl } from '@angular/forms';
+import { borderColorChange } from '../form.animations';
 
 @Directive({
   selector: '[baseInput]'
 })
-export class BaseInputDirective implements OnInit {
+export class BaseInputDirective implements OnInit, ControlValueAccessor {
 
   @Input()
   public placeholder: string;
@@ -16,7 +17,8 @@ export class BaseInputDirective implements OnInit {
   // Template variables
   public inputControl: FormControl;
 
-  constructor() {
+  constructor(protected control: NgControl) {
+    this.control.valueAccessor = this;
   }
 
   ngOnInit() {
@@ -28,6 +30,19 @@ export class BaseInputDirective implements OnInit {
       newValue => this.onChange(newValue)
     );
   }
+
+  public getInputAnimationState(): string {
+    if (this.control.value) {
+      return this.control.valid ? 'validWithValue' : 'invalidWithValue';
+    }
+    // return  this.control.value ?
+    //           this.control.valid ?
+    //           'validWithValue' :
+    //           'invalidWithValue'
+    //         : 'noValue';
+  }
+
+  // ControlValueAccessor methods
 
   public writeValue(value: boolean): void {
     this.inputControl.setValue(value);
