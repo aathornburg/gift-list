@@ -32,8 +32,12 @@ export class BaseInputDirective implements OnInit, ControlValueAccessor {
   }
 
   public getInputAnimationState(): string {
-    if (this.control.value) {
-      return this.control.valid ? 'validWithValue' : 'invalidWithValue';
+    if (this.control.dirty) {
+      if (this.control.value) {
+        return this.control.valid ? 'validWithValue' : 'invalidWithValue';
+      } else {
+        return this.control.valid ? 'validWithoutValue' : 'invalidWithoutValue';
+      }
     }
     // return  this.control.value ?
     //           this.control.valid ?

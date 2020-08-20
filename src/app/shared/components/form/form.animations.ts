@@ -13,8 +13,10 @@ const errorColorLight: string = ColorHelper.getColorByVariableName('--ion-color-
 export const moveUpShrink = trigger('moveUpShrink', [
     state('validWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: primaryColor })),
     state('invalidWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: errorColor })),
+    state('validWithoutValue', style({ top: '*', 'font-size': '*', height: '*', color: '*' })),
+    state('invalidWithoutValue', style({ top: '*', 'font-size': '*', height: '*', color: '*' })),
     transition('* <=> *', [
-        animate(`150ms ease-in-out`)
+        animate(`1000ms ease-in-out`)
     ])
 ]);
 
@@ -22,10 +24,12 @@ export const moveUpShrink = trigger('moveUpShrink', [
 export const borderColorChange = trigger('borderColorChange', [
     state('validWithValue', style({ 'border-color': primaryColorLight })),
     state('invalidWithValue', style({ 'border-color': errorColorLight })),
+    state('validWithoutValue', style({ 'border-color': primaryColorLight })),
+    state('invalidWithoutValue', style({ 'border-color': errorColorLight })),
     transition('* <=> *', [
         group([
-            query('@*', [ animateChild() ]),
-            animate(`150ms ease-in-out`)
+            query('@*', [ animateChild() ], { optional: true }),
+            animate(`1000ms ease-in-out`)
         ])
     ])
 ]);
