@@ -8,7 +8,7 @@ ion-icon {
     display: flex;
     align-items: center;
     position: absolute;
-    right: calc(var(--input-side-padding) - var(--input-border-width) - var(--label-side-padding) - 1px);
+    right: calc(var(--form-input-side-padding) - var(--form-input-border-width) - var(--form-label-side-padding) - 1px);
     height: 100%;
     font-size: 24px;
 }
