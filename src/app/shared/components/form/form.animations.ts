@@ -15,10 +15,30 @@ const formInputLabelHeight: string = CSSVariableHelper.getValue('--form-input-la
 
 // Moves label text upward into input border and changes its color according to input validity
 export const moveUpShrinkColorChange = trigger('moveUpShrinkColorChange', [
-    state('validWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: primaryColor })),
-    state('invalidWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: errorColor })),
-    state('validWithoutValue', style({ top: '0px', 'font-size': formInputFontSize, height: formInputLabelHeight, color: lightColor})),
-    state('invalidWithoutValue', style({ top: '0px', 'font-size': formInputFontSize, height: formInputLabelHeight, color: lightColor })),
+    state('validWithValue', style({
+        top: verticalCenterTopOffsetPx,
+        'font-size': labelHeightPx,
+        height: labelHeightPx,
+        color: primaryColor
+    })),
+    state('invalidWithValue', style({
+        top: verticalCenterTopOffsetPx,
+        'font-size': labelHeightPx, height:
+        labelHeightPx,
+        color: errorColor
+    })),
+    state('validWithoutValue', style({
+        top: '0px',
+        'font-size': formInputFontSize,
+        height: formInputLabelHeight,
+        color: lightColor
+    })),
+    state('invalidWithoutValue', style({
+        top: '0px',
+        'font-size': formInputFontSize,
+        height: formInputLabelHeight,
+        color: lightColor
+    })),
     transition('* <=> *', [
         animate(`150ms ease-in-out`)
     ])
