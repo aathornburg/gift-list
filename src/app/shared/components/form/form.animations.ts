@@ -1,21 +1,37 @@
 import { trigger, state, style, animate, transition, query, animateChild, group } from '@angular/animations';
-import { ColorHelper } from 'src/app/shared/helpers/color-helper';
+import { CSSVariableHelper } from 'src/app/shared/helpers/css-variable-helper';
 
 const labelHeight = 14;
 const labelHeightPx: string = `${labelHeight}px`
 const verticalCenterTopOffsetPx: string = `-${labelHeight / 2}px`;
-const primaryColor: string = ColorHelper.getColorByVariableName('--ion-color-primary');
-const primaryColorLight: string = ColorHelper.getColorByVariableName('--ion-color-primary-light');
-const errorColor: string = ColorHelper.getColorByVariableName('--ion-color-danger');
-const errorColorLight: string = ColorHelper.getColorByVariableName('--ion-color-danger-light');
+const primaryColor: string = CSSVariableHelper.getValue('--ion-color-primary');
+const primaryColorLight: string = CSSVariableHelper.getValue('--ion-color-primary-light');
+const lightColor: string = CSSVariableHelper.getValue('--ion-color-light');
+const errorColor: string = CSSVariableHelper.getValue('--ion-color-danger');
+const errorColorLight: string = CSSVariableHelper.getValue('--ion-color-danger-light');
+const formInputHeight: string = CSSVariableHelper.getValue('--form-input-height');
+const formInputFontSize: string = CSSVariableHelper.getValue('--form-input-font-size');
+const formInputLabelHeight: string = CSSVariableHelper.getValue('--form-input-label-height');
+
+// Moves label text upward into input border and changes its color according to input validity
+export const moveUpShrinkColorChange = trigger('moveUpShrinkColorChange', [
+    state('validWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: primaryColor })),
+    state('invalidWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: errorColor })),
+    state('validWithoutValue', style({ top: '0px', 'font-size': formInputFontSize, height: formInputLabelHeight, color: lightColor})),
+    state('invalidWithoutValue', style({ top: '0px', 'font-size': formInputFontSize, height: formInputLabelHeight, color: lightColor })),
+    transition('* <=> *', [
+        animate(`150ms ease-in-out`)
+    ])
+]);
 
 // Moves label text upward into input border and changes its color according to input validity
 export const moveUpShrink = trigger('moveUpShrink', [
-    state('validWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: primaryColor })),
-    state('invalidWithValue', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx, color: errorColor })),
-    state('validWithoutValue', style({ top: '*', 'font-size': '*', height: '*', color: '*' })),
-    state('invalidWithoutValue', style({ top: '*', 'font-size': '*', height: '*', color: '*' })),
-    transition('* <=> *', [
+    state('true', style({ top: verticalCenterTopOffsetPx, 'font-size': labelHeightPx, height: labelHeightPx })),
+    state('false', style({ height: formInputHeight, 'font-size': formInputFontSize, top: '0px' })),
+    transition('true => false', [
+        animate(`1000ms ease-in-out`)
+    ]),
+    transition('false => true', [
         animate(`1000ms ease-in-out`)
     ])
 ]);

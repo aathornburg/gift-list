@@ -1,6 +1,6 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { FormControl, NgControl } from '@angular/forms';
-import { moveUpShrink, borderColorChange } from '../form.animations';
+import { moveUpShrinkColorChange, borderColorChange } from '../form.animations';
 import { BaseInputDirective } from '../base-input/base-input.directive';
 
 @Component({
@@ -8,7 +8,7 @@ import { BaseInputDirective } from '../base-input/base-input.directive';
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.scss'],
   animations: [
-    moveUpShrink,
+    moveUpShrinkColorChange,
     borderColorChange
   ],
   host: { 'class': '__form-input-host' }

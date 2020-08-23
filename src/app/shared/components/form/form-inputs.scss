@@ -1,29 +1,27 @@
 .__form-input-host {
-    --input-side-padding: 14px;
-    --input-border-width: 2px;
-    --input-height: 55px;
-    --input-font-size: 15px;
-    --label-side-padding: 4px;
+    --form-input-side-padding: 14px;
+    --form-input-font-size: 15px;
+    --form-label-side-padding: 4px;
 
     display: block;
     position: relative;
-    height: var(--input-height);
+    height: var(--form-input-height);
     width: 100%;
     border-radius: 3px;
-    border: var(--input-border-width) solid var(--ion-color-primary-light);
+    border: var(--form-input-border-width) solid var(--ion-color-primary-light);
 
     ion-label {
         position: absolute;
         display: flex;
         align-items: center;
-        margin-left: calc(var(--input-side-padding) - var(--input-border-width) - var(--label-side-padding) - 1px);
+        margin-left: calc(var(--form-input-side-padding) - var(--form-input-border-width) - var(--form-label-side-padding) - 1px);
         text-transform: uppercase;
         color: var(--ion-color-light);
-        padding: 0px var(--label-side-padding);
+        padding: 0px var(--form-label-side-padding);
         background: white;
-        font-size: var(--input-font-size);
-        height: var(--input-font-size);
-        top: calc((var(--input-border-width) * -1) + (var(--input-height) / 2) - (var(--input-font-size) / 2));
+        font-size: var(--form-input-font-size);
+        height: var(--form-input-label-height);
+        box-sizing: border-box;
 
         small {
             font-size: 85%;
@@ -35,9 +33,9 @@
         bottom: 0;
         height: 100%;
         width: 100%;
-        font-size: var(--input-font-size);
-        --padding-start: calc(var(--input-side-padding) - var(--input-border-width) - 1px);
-        --padding-end: calc(var(--input-side-padding) - var(--input-border-width) - 1px);
+        font-size: var(--form-input-font-size);
+        --padding-start: calc(var(--form-input-side-padding) - var(--form-input-border-width) - 1px);
+        --padding-end: calc(var(--form-input-side-padding) - var(--form-input-border-width) - 1px);
     }
 
     &.ng-dirty.ng-invalid {

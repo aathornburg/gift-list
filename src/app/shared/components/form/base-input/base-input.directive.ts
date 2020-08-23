@@ -39,11 +39,6 @@ export class BaseInputDirective implements OnInit, ControlValueAccessor {
         return this.control.valid ? 'validWithoutValue' : 'invalidWithoutValue';
       }
     }
-    // return  this.control.value ?
-    //           this.control.valid ?
-    //           'validWithValue' :
-    //           'invalidWithValue'
-    //         : 'noValue';
   }
 
   // ControlValueAccessor methods
