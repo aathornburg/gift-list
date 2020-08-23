@@ -32,7 +32,7 @@ export const moveUpShrink = trigger('moveUpShrink', [
         animate(`1000ms ease-in-out`)
     ]),
     transition('false => true', [
-        animate(`1000ms ease-in-out`)
+        animate(`150s ease-in-out`)
     ])
 ]);
 
@@ -45,7 +45,7 @@ export const borderColorChange = trigger('borderColorChange', [
     transition('* <=> *', [
         group([
             query('@*', [ animateChild() ], { optional: true }),
-            animate(`1000ms ease-in-out`)
+            animate(`150ms ease-in-out`)
         ])
     ])
 ]);
