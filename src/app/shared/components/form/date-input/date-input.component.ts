@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormControl, NgControl } from '@angular/forms';
-import { moveUpShrink } from '../form.animations';
+import { moveUpShrinkColorChange } from '../form.animations';
 import { BaseInputDirective } from '../base-input/base-input.directive';
 
 @Component({
@@ -8,7 +8,7 @@ import { BaseInputDirective } from '../base-input/base-input.directive';
   templateUrl: './date-input.component.html',
   styleUrls: ['./date-input.component.scss'],
   animations: [
-    moveUpShrink
+    moveUpShrinkColorChange
   ],
   host: { 'class': '__form-input-host' }
 })
