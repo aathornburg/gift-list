@@ -95,4 +95,23 @@
   --ion-color-light-contrast-rgb: 0,0,0;
   --ion-color-light-shade: #9ea4a8;
   --ion-color-light-tint: #bcc1c5;
+
+  --ion-color-white: #ffffff;
+  --ion-color-white-rgb: 255,255,255;
+  --ion-color-white-contrast: #000000;
+  --ion-color-white-contrast-rgb: 0,0,0;
+  --ion-color-white-shade: #e0e0e0;
+  --ion-color-white-tint: #ffffff;
+}
+
+/** SCSS variables for colors **/
+$colors: (
+  // white: (
+  //   standard: #ffffff
+  // )
+  white: #ffffff
+);
+
+@function colors($color-name, $color-variant) {
+  @return map-get(map-get($colors, $color-name), $color-variant);
 }

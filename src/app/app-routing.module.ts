@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './flows/login/login/login.module#LoginPageModule' },
   { path: 'sign-up', loadChildren: './flows/login/sign-up/sign-up.module#SignUpPageModule' },
+  { path: 'landing', loadChildren: './flows/main/landing/landing.module#LandingPageModule' },
 ];
 
 @NgModule({
